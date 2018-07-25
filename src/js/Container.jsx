@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ta from 'time-ago';
-export default class toStoryCard extends React.Component {
+export default class toCoverStoryCard extends React.Component {
   constructor(props) {
     super(props)
     let stateVar = {
@@ -207,7 +207,7 @@ export default class toStoryCard extends React.Component {
   //   return (subDomain);
   // }
 
-  renderSixteenCol(){
+  renderSection(){
     if(this.state.fetchingData){
       return(
         <div>Loading</div>
@@ -223,7 +223,7 @@ export default class toStoryCard extends React.Component {
                   <img src={data.imageurl}></img>
                   <div className="black-overlay"></div>
                 </div>
-                <div className="tostory-cover-image">
+                <div className="toCoverStory-cover-image">
                   <img src={data.imageurl}></img>
                 </div>
                 <div className="context">
@@ -261,7 +261,7 @@ export default class toStoryCard extends React.Component {
     }
   }
 
-  renderSevenCol(){
+  renderArticle(){
     if(this.state.fetchingData){
       return(
         <div>Loading</div>
@@ -278,7 +278,7 @@ export default class toStoryCard extends React.Component {
                     <img src={data.imageurl}></img>
                     <div className="black-overlay"></div>
                   </div>
-                  <div className="tostory-cover-image">
+                  <div className="toCoverStory-cover-image">
                     <img src={data.imageurl}></img>
                   </div>
                   <div className="context">
@@ -338,10 +338,10 @@ export default class toStoryCard extends React.Component {
 
   render() {
     switch(this.props.mode) {
-      case 'col16':
-        return this.renderSixteenCol();
-      case 'col7':
-        return this.renderSevenCol();
+      case 'section':
+        return this.renderSection();
+      case 'article':
+        return this.renderArticle();
     }
   }
 }

@@ -13,7 +13,7 @@ export default class EditStoryCard extends React.Component {
         card_data: {},
         configs: {}
       },
-      mode: "col16",
+      mode: "section",
       loading: true,
       publishing: false,
       uiSchemaJSON: {},
@@ -250,7 +250,7 @@ export default class EditStoryCard extends React.Component {
                 <div>
                   <div className="section-title-text">Fill the form</div>
                   <div className="ui label proto-pull-right">
-                    toStory
+                    toCoverStory
                   </div>
                 </div>
                 <JSONSchemaForm
@@ -267,17 +267,17 @@ export default class EditStoryCard extends React.Component {
               <div className="twelve wide column proto-card-preview proto-share-card-div">
                 <div className="protograph-menu-container">
                   <div className="ui compact menu">
-                    <a className={`item ${this.state.mode === 'col16' ? 'active' : ''}`}
-                      data-mode='col16'
+                    <a className={`item ${this.state.mode === 'section' ? 'active' : ''}`}
+                      data-mode='section'
                       onClick={this.toggleMode}
                     >
-                      16c-cover
+                      Section
                     </a>
-                    <a className={`item ${this.state.mode === 'col7' ? 'active' : ''}`}
-                      data-mode='col7'
+                    <a className={`item ${this.state.mode === 'article' ? 'active' : ''}`}
+                      data-mode='article'
                       onClick={this.toggleMode}
                     >
-                      7c
+                      Article
                     </a>
                   </div>
                 </div>

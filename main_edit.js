@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import EditStoryCard from './src/js/EditContainer.jsx';
 
-ProtoGraph.Card.toStory.prototype.getData = function (data) {
+ProtoGraph.Card.toCoverStory.prototype.getData = function (data) {
   return this.containerInstance.exportData();
 }
 
-ProtoGraph.Card.toStory.prototype.renderSEO = function (data) {
+ProtoGraph.Card.toCoverStory.prototype.renderSEO = function (data) {
   this.renderMode = 'SEO';
   return this.containerInstance.renderSEO();
 }
 
-ProtoGraph.Card.toStory.prototype.renderEdit = function (onPublishCallback) {
+ProtoGraph.Card.toCoverStory.prototype.renderEdit = function (onPublishCallback) {
   this.mode = 'edit';
   this.onPublishCallback = onPublishCallback;
   ReactDOM.render(

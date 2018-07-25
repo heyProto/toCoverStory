@@ -5,44 +5,29 @@ import StoryCard from './src/js/Container.jsx';
 window.ProtoGraph = window.ProtoGraph || {};
 window.ProtoGraph.Card = window.ProtoGraph.Card || {};
 
-ProtoGraph.Card.toStory = function () {
-  this.cardType = 'toStoryCard';
+ProtoGraph.Card.toCoverStory = function () {
+  this.cardType = 'toCoverStoryCard';
 }
 
-ProtoGraph.Card.toStory.prototype.init = function (options) {
+ProtoGraph.Card.toCoverStory.prototype.init = function (options) {
   this.options = options;
 }
 
-ProtoGraph.Card.toStory.prototype.getData = function (data) {
+ProtoGraph.Card.toCoverStory.prototype.getData = function (data) {
   return this.containerInstance.exportData();
 }
 
-ProtoGraph.Card.toStory.prototype.renderSixteenCol= function (data) {
-  this.mode = 'col16';
+ProtoGraph.Card.toCoverStory.prototype.renderSection= function (data) {
+  this.mode = 'section';
   this.render();
 }
 
-ProtoGraph.Card.toStory.prototype.renderSevenCol= function (data) {
-  this.mode = 'col7';
+ProtoGraph.Card.toCoverStory.prototype.renderArticle= function (data) {
+  this.mode = 'article';
   this.render();
 }
 
-ProtoGraph.Card.toStory.prototype.renderFourCol= function (data) {
-  this.mode = 'col4';
-  this.render();
-}
-
-ProtoGraph.Card.toStory.prototype.renderThreeCol= function (data) {
-  this.mode = 'col3';
-  this.render();
-}
-
-ProtoGraph.Card.toStory.prototype.renderTwoCol= function (data) {
-  this.mode = 'col2';
-  this.render();
-}
-
-ProtoGraph.Card.toStory.prototype.render = function () {
+ProtoGraph.Card.toCoverStory.prototype.render = function () {
   ReactDOM.render(
     <StoryCard
       dataURL={this.options.data_url}
