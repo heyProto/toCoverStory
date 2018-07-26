@@ -239,13 +239,13 @@ export default class toCoverStoryCard extends React.Component {
                     <div className="byline-name">{data.byline}</div>
                     {data.publishedat && <div className="timeline"><span className="dot-seperator">&#x2027;</span>{ta.ago(data.publishedat)}</div> }
                   </div>}
-                  <div className="media-icons">
-                    <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/image.png" height="8px"></img></span>
-                    <span className="dot-seperator">&#x2027;</span>
-                    <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/audio.png" height="8px"></img></span>
-                    <span className="dot-seperator">&#x2027;</span>
-                    <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/video.png" height="8px"></img></span>
-                  </div>
+                  {(data.hasvideo || data.hasimage || data.hasaudio) && <div className="media-icons">
+                    {data.hasimage && <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/image.png" height="8px"></img>
+                        {(data.hasaudio || data.hasvideo) && <span className="dot-seperator">&#x2027;</span>}</span>}
+                    {data.hasaudio && <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/audio.png" height="8px"></img>
+                        {data.hasvideo && <span className="dot-seperator">&#x2027;</span>}</span>}
+                    {data.hasvideo && <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/video.png" height="8px"></img></span>}
+                  </div>}
                   {(data.city || data.state || data.country) && <div className="location-details">
                     <img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/location-icon.png"></img>
                       <span>{data.city ? data.city + (data.state || data.country ? ", " : "") : ""}

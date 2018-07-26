@@ -74,6 +74,10 @@
           "title": "Does the article have a video?",
           "type": "boolean"
         },
+        "hasaudio": {
+          "title": "Does the article have an audio?",
+          "type": "boolean"
+        },
         "hasdata": {
           "title": "Does the article have data?",
           "type": "boolean"
