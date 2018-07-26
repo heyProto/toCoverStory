@@ -207,6 +207,61 @@ export default class toCoverStoryCard extends React.Component {
   //   return (subDomain);
   // }
 
+  renderHTML(data) {
+    if (this.state.fetchingData) {
+      return (
+        <div></div>
+      )
+    } else {
+      return (
+      <div className="pro-container" onClick={() => { this.handleClick() }}>
+        <div className="pro-col pro-col-16">
+          <div className="pro-row pro-row-5">
+            <div className="pro-card pro-cover-card">
+              <div className="frost-glass-background">
+                <img src={data.imageurl}></img>
+                <div className="black-overlay"></div>
+              </div>
+              <div className="toCoverStory-cover-image">
+                <img src={data.imageurl}></img>
+              </div>
+              <div className="context">
+                <div className="intersection-tag">
+                  {data.genre && <span>{data.genre}</span>}
+                  {data.genre && data.subgenre && <span>&#x2027;</span>}
+                  {data.subgenre && <span>{data.subgenre}</span>}
+                </div>
+                {data.headline && <h1>{data.headline}</h1>}
+                {data.summary && <p>{data.summary}</p>}
+                <div className="publishing-info">
+                  {!data.hide_byline && <div className="byline">
+                    <div className="byline-image"><img src={data.byline_image}></img></div>
+                    <div className="byline-name">{data.byline}</div>
+                    {data.publishedat && <div className="timeline"><span className="dot-seperator">&#x2027;</span>{ta.ago(data.publishedat)}</div> }
+                  </div>}
+                  <div className="media-icons">
+                    <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/image.png" height="8px"></img></span>
+                    <span className="dot-seperator">&#x2027;</span>
+                    <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/audio.png" height="8px"></img></span>
+                    <span className="dot-seperator">&#x2027;</span>
+                    <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/video.png" height="8px"></img></span>
+                  </div>
+                  {(data.city || data.state || data.country) && <div className="location-details">
+                    <img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/location-icon.png"></img>
+                      <span>{data.city ? data.city + (data.state || data.country ? ", " : "") : ""}
+                      {data.state ? data.state + ( data.country ? ", " : "" ):""}
+                      {data.country}</span>
+                  </div>}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      )
+    }
+  }
+
   renderSection(){
     if(this.state.fetchingData){
       return(
@@ -215,47 +270,8 @@ export default class toCoverStoryCard extends React.Component {
     }else{
       let data = this.state.dataJSON.card_data.data;
       return(
-        <div className="pro-container" onClick = {()=>{ this.handleClick() }}>
-          <div className="pro-col pro-col-16">
-            <div className="pro-row pro-row-5">
-              <div className="pro-card pro-cover-card">
-                <div className="frost-glass-background">
-                  <img src={data.imageurl}></img>
-                  <div className="black-overlay"></div>
-                </div>
-                <div className="toCoverStory-cover-image">
-                  <img src={data.imageurl}></img>
-                </div>
-                <div className="context">
-                  <div className="intersection-tag">
-                    {data.genre && <span>{data.genre}</span>}
-                    {data.genre && data.subgenre && <span>&#x2027;</span>}
-                    {data.subgenre && <span>{data.subgenre}</span>}
-                  </div>
-                  {data.headline && <h1>{data.headline}</h1>} 
-                  {data.summary && <p>{data.summary}</p>}
-                  <div className="publishing-info">
-                    {!data.hide_byline && <div className="byline">
-                      <div className="byline-image"><img src={data.byline_image}></img></div>
-                      <div className="byline-name">{data.byline}</div>
-                      <div className="timeline"><span className="dot-seperator">&#x2027;</span>{ta.ago(data.publishedat)}</div>
-                    </div>}
-                    <div className="media-icons">
-                      <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/image.png" height="8px"></img></span>
-                      <span className="dot-seperator">&#x2027;</span>
-                      <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/audio.png" height="8px"></img></span>
-                      <span className="dot-seperator">&#x2027;</span>
-                      <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/video.png" height="8px"></img></span>
-                    </div>
-                    <div className="location-details">
-                      <img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/location-icon.png"></img>
-                      <span>{`${data.city ? (data.city + ', '): ""}${data.state ? (data.state+", ") : ""}${data.country ? data.country : ""}`}</span>
-                    </div>
-                  </div>	
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="pro-section-page">
+          {this.renderHTML(data)}
         </div>
       )
     }
@@ -270,48 +286,7 @@ export default class toCoverStoryCard extends React.Component {
       let data = this.state.dataJSON.card_data.data;
       return(
         <div className="pro-article-page">
-          <div className="pro-container" onClick = {()=>{ this.handleClick() }}>
-            <div className="pro-col pro-col-16">
-              <div className="pro-row pro-row-5">
-                <div className="pro-card pro-cover-card">
-                  <div className="frost-glass-background">
-                    <img src={data.imageurl}></img>
-                    <div className="black-overlay"></div>
-                  </div>
-                  <div className="toCoverStory-cover-image">
-                    <img src={data.imageurl}></img>
-                  </div>
-                  <div className="context">
-                    <div className="intersection-tag">
-                      {data.genre && <span>{data.genre}</span>}
-                      {data.genre && data.subgenre && <span>&#x2027;</span>}
-                      {data.subgenre && <span>{data.subgenre}</span>}
-                    </div>
-                    {data.headline && <h1>{data.headline}</h1>} 
-                    {data.summary && <p>{data.summary}</p>}
-                    <div className="publishing-info">
-                      {!data.hide_byline && <div className="byline">
-                        <div className="byline-image"><img src={data.byline_image}></img></div>
-                        <div className="byline-name">{data.byline}</div>
-                        <div className="timeline"><span className="dot-seperator">&#x2027;</span>{ta.ago(data.publishedat)}</div>
-                      </div>}
-                      <div className="media-icons">
-                        <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/image.png" height="8px"></img></span>
-                        <span className="dot-seperator">&#x2027;</span>
-                        <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/audio.png" height="8px"></img></span>
-                        <span className="dot-seperator">&#x2027;</span>
-                        <span><img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/video.png" height="8px"></img></span>
-                      </div>
-                      {(data.country || data.city || data.state) && <div className="location-details">
-                        <img src="https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/location-icon.png"></img>
-                        <span>{`${data.city ? (data.city + ', '): ""}${data.state ? (data.state+", ") : ""}${data.country ? data.country : ""}`}</span>
-                      </div>}
-                    </div>	
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {this.renderHTML(data)}
         </div>
       )
     }
@@ -342,6 +317,8 @@ export default class toCoverStoryCard extends React.Component {
         return this.renderSection();
       case 'article':
         return this.renderArticle();
+      default:
+        return this.renderHTML(this.state.dataJSON.data);
     }
   }
 }
