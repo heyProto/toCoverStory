@@ -1,16 +1,16 @@
 @font-face {
   font-family: AvenirLTStd-Book;
-  src: url("https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/AvenirLTStd-Book.otf") format("opentype");
+  src: url("https://cdn.protograph.pykih.com/lib/AvenirLTStd-Book.otf") format("opentype");
 }
 
 @font-face {
   font-family: AvenirLTStd-Medium;
-  src: url("https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/AvenirLTStd-Medium.otf") format("opentype");
+  src: url("https://cdn.protograph.pykih.com/lib/AvenirLTStd-Medium.otf") format("opentype");
 }
 
 @font-face {
   font-family: Avenir-Bold;
-  src: url("https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/lib/AEH.ttf") format("opentype");
+  src: url("https://cdn.protograph.pykih.com/lib/AEH.ttf") format("opentype");
 }
 
 body {
