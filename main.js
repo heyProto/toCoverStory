@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import StoryCard from './src/js/Container.jsx';
+import {render, hydrate} from 'react-dom';
+import CoverStoryCard from './src/js/Container.jsx';
 
 window.ProtoGraph = window.ProtoGraph || {};
 window.ProtoGraph.Card = window.ProtoGraph.Card || {};
@@ -28,17 +28,26 @@ ProtoGraph.Card.toCoverStory.prototype.renderArticle= function (data) {
 }
 
 ProtoGraph.Card.toCoverStory.prototype.render = function () {
-  ReactDOM.render(
-    <StoryCard
-      dataURL={this.options.data_url}
-      selector={this.options.selector}
-      domain={this.options.domain}
-      siteConfigURL={this.options.site_config_url}
-      siteConfigs={this.options.site_configs}
-      clickCallback={this.options.onClickCallback}
-      mode={this.mode}
-      ref={(e) => {
-        this.containerInstance = this.containerInstance || e;
-      }} />,
-    this.options.selector);
+  if (this.options.isFromSSR){
+    hydrate(
+      <CoverStoryCard
+        mode={this.mode}
+        dataJSON={this.options.initialState.dataJSON}
+      />,
+      this.options.selector);
+  } else {
+    render(
+      <CoverStoryCard
+        dataURL={this.options.data_url}
+        selector={this.options.selector}
+        domain={this.options.domain}
+        siteConfigURL={this.options.site_config_url}
+        siteConfigs={this.options.site_configs}
+        clickCallback={this.options.onClickCallback}
+        mode={this.mode}
+        ref={(e) => {
+          this.containerInstance = this.containerInstance || e;
+        }} />,
+      this.options.selector);
+  }
 }

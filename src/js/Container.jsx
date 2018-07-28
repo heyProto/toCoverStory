@@ -17,7 +17,9 @@ export default class toCoverStoryCard extends React.Component {
     if (this.props.dataJSON) {
       stateVar.fetchingData = false;
       stateVar.dataJSON = this.props.dataJSON;
-      stateVar.languageTexts = this.getLanguageTexts(this.props.dataJSON.card_data.data.language);
+      if(this.props.dataJSON){
+        stateVar.languageTexts = this.getLanguageTexts(this.props.dataJSON.card_data.data.language);
+      }
     }
 
     if (this.props.optionalConfigJSON) {
@@ -62,8 +64,11 @@ export default class toCoverStoryCard extends React.Component {
         stateVar.languageTexts = this.getLanguageTexts(stateVar.siteConfigs.primary_language.toLowerCase());
         this.setState(stateVar);
       }));
-    } else {
-      this.componentDidUpdate();
+    }  else {
+      console.log("ISFromSSR", !this.props.isFromSSR);
+      if (!this.props.renderingSSR) {
+        this.componentDidUpdate();
+      }
     }
   }
 
@@ -240,11 +245,11 @@ export default class toCoverStoryCard extends React.Component {
                     {data.publishedat && <div className="timeline"><span className="dot-seperator">&#x2027;</span>{ta.ago(data.publishedat)}</div> }
                   </div>}
                   {(data.hasvideo || data.hasimage || data.hasaudio) && <div className="media-icons">
-                    {data.hasimage && <span><img src="https://cdn.protograph.pykih.com/lib/image.png" height="8px"></img>
+                    {data.hasimage && <span><img src="https://cdn.protograph.pykih.com/Assets/image.png" height="8px"></img>
                         {(data.hasaudio || data.hasvideo) && <span className="dot-seperator">&#x2027;</span>}</span>}
-                    {data.hasaudio && <span><img src="https://cdn.protograph.pykih.com/lib/audio.png" height="8px"></img>
+                    {data.hasaudio && <span><img src="https://cdn.protograph.pykih.com/Assets/audio.png" height="8px"></img>
                         {data.hasvideo && <span className="dot-seperator">&#x2027;</span>}</span>}
-                    {data.hasvideo && <span><img src="https://cdn.protograph.pykih.com/lib/video.png" height="8px"></img></span>}
+                    {data.hasvideo && <span><img src="https://cdn.protograph.pykih.com/Assets/video.png" height="8px"></img></span>}
                   </div>}
                   {(data.city || data.state || data.country) && <div className="location-details">
                     <img src="https://cdn.protograph.pykih.com/lib/location-icon.png"></img>
@@ -318,7 +323,7 @@ export default class toCoverStoryCard extends React.Component {
       case 'article':
         return this.renderArticle();
       default:
-        return this.renderHTML(this.state.dataJSON.data);
+        return this.renderHTML(this.state.dataJSON.card_data);
     }
   }
 }

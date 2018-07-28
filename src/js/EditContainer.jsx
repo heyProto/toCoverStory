@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
-import StoryCard from './Container.jsx';
+import CoverStoryCard from './Container.jsx';
 import JSONSchemaForm from '../../lib/js/react-jsonschema-form';
 
 export default class EditStoryCard extends React.Component {
@@ -283,7 +282,7 @@ export default class EditStoryCard extends React.Component {
                 </div>
                 {
                   this.state.mode == "blank" ? <div /> : <div className="protograph-app-holder">
-                    <StoryCard
+                    <CoverStoryCard
                       mode={this.state.mode}
                       dataJSON={this.state.dataJSON}
                       domain={this.props.domain}
