@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "id": "http://example.com/example.json",
+  "properties": {
+    "data": {
+      "id": "/properties/data",
+      "properties": {
+        "url": {
+          "id": "/properties/data/properties/url",
+          "title": "Story URL",
+          "type": "string",
+          "format":"uri"
+        },
+        "headline":{
+          "title": "Headline",
+          "type": "string",
+          "minLength":11,
+          "maxLength":90
+        },
+        "byline":{
+          "title": "Byline",
+          "type": "string",
+          "minLength":3,
+          "maxLength": 25
+        },
+        "byline_image":{
+          "title":"Byline Image",
+          "type":"string",
+          "format":"uri"
+        },
+        "publishedat":{
+          "title": "Publish Date",
+          "type": "string",
+          "format":"date-time"
+        },
+        "hide_byline": {
+          "title": "Hide Byline",
+          "type": "boolean"
+        },
+        "series":{
+          "title": "Series",
+          "type": "string",
+          "minLength":3,
+          "maxLength": 20
+        },
+        "genre":{
+          "title": "Intersection",
+          "type": "string",
+          "minLength":3,
+          "maxLength": 15
+        },
+        "subgenre":{
+          "title": "Sub Intersection",
+          "type": "string",
+          "minLength":3,
+          "maxLength": 15
+        },
+        "iconbgcolor":{
+          "title":"Background color of icon",
+          "type":"string",
+          "format":"color",
+          "default":"white"
+        },
+        "sponsored":{
+          "title":"Is it sponsored?",
+          "type":"boolean"
+        },
+        "hasimage": {
+          "title": "Does the article have an image other than cover image?",
+          "type": "boolean"
+        },
+        "hasvideo": {
+          "title": "Does the article have a video?",
+          "type": "boolean"
+        },
+        "hasaudio": {
+          "title": "Does the article have an audio?",
+          "type": "boolean"
+        },
+        "hasdata": {
+          "title": "Does the article have data?",
+          "type": "boolean"
+        },
+        "interactive":{
+          "type":"boolean"
+        },
+        "summary":{
+          "title": "Summary",
+          "type": "string",
+          "minLength":50,
+          "maxLength": 300
+        },
+        "imageurl":{
+          "title":"16 col Image URL",
+          "type":"string",
+          "format":"uri"
+        },
+        "col7imageurl":{
+          "title":"7 col Image URL",
+          "type":"string",
+          "format":"uri"
+        },
+        "focus":{
+          "title":"Is the image vertically focused or horizontally focused?",
+          "type":"string",
+          "enum":["v","h"],
+          "enumNames":["Vertically focused","Horizontally focused"],
+          "default":"h"
+        },
+        "country": {
+          "title": "Country",
+          "type": "string"
+        },
+        "state": {
+          "title": "State",
+          "type": "string"
+        },
+        "city": {
+          "title": "City",
+          "type": "string"
+        },
+        "publishername":{
+          "type":"string"
+        },
+        "domainurl":{
+          "type":"string"
+        },
+        "faviconurl":{
+          "type":"string"
+        },
+        "left":{
+          "title": "Left (in %)",
+          "type":"number"
+        },
+        "top":{
+          "title":"Top (in %)",
+          "type":"number"
+        }
+      },
+      "title":"Card Data",
+      "type": "object",
+      "required": [
+        "url","headline","byline","publishedat"
+      ]
+    }
+  },
+  "type": "object"
+}
