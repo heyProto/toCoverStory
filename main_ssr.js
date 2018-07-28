@@ -15,20 +15,20 @@ function renderWithMode(mode) {
     }
 }
 
-function getScriptString(mode, dataJSON, selector, site_configs) {
-    return `<script>
-            var x = new ProtoGraph.Card.toCoverStory(),
-                params = {
-                    "selector": document.querySelector('${selector}'),
-                    "isFromSSR": true,
-                    "initialState": ${JSON.stringify(dataJSON)},
-                    "site_configs": ${JSON.stringify(site_configs)}
-                };
-            x.init(params);
-            ${renderWithMode(mode)}
-        </script>
-    `
-}
+// function getScriptString(mode, dataJSON, selector, site_configs) {
+//     return `<script>
+//             var x = new ProtoGraph.Card.toCoverStory(),
+//                 params = {
+//                     "selector": document.querySelector('${selector}'),
+//                     "isFromSSR": true,
+//                     "initialState": ${JSON.stringify(dataJSON)},
+//                     "site_configs": ${JSON.stringify(site_configs)}
+//                 };
+//             x.init(params);
+//             ${renderWithMode(mode)}
+//         </script>
+//     `
+// }
 
 function render(mode, initialState) {
     let content = renderToString(
@@ -44,5 +44,6 @@ function render(mode, initialState) {
 
 module.exports = {
     render: render,
-    getScriptString: getScriptString
+    // getScriptString: getScriptString
+    instance: 'toCoverStory'
 }

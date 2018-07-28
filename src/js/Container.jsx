@@ -6,24 +6,14 @@ export default class toCoverStoryCard extends React.Component {
     super(props)
     let stateVar = {
       fetchingData: true,
-      dataJSON: {
-        card_data: {},
-        configs: {}
-      },
-      domain: undefined,
-      optionalConfigJSON: {},
+      dataJSON: {},
+      domain: undefined
     };
 
     if (this.props.dataJSON) {
       stateVar.fetchingData = false;
       stateVar.dataJSON = this.props.dataJSON;
-      if(this.props.dataJSON){
-        stateVar.languageTexts = this.getLanguageTexts(this.props.dataJSON.card_data.data.language);
-      }
-    }
-
-    if (this.props.optionalConfigJSON) {
-      stateVar.optionalConfigJSON = this.props.optionalConfigJSON;
+      stateVar.languageTexts = this.getLanguageTexts(this.props.dataJSON.data.language);
     }
 
     if(this.props.domain){
@@ -35,7 +25,9 @@ export default class toCoverStoryCard extends React.Component {
     }
 
     this.state = stateVar;
+    this.handleClick = this.handleClick.bind(this);
   }
+
 
   componentDidMount() {
     if (this.state.fetchingData){
@@ -48,9 +40,7 @@ export default class toCoverStoryCard extends React.Component {
       axios.all(items_to_fetch).then(axios.spread((card, site_configs) => {
         let stateVar = {
           fetchingData: false,
-          dataJSON: {
-            card_data: card.data
-          },
+          dataJSON: card.data,
           optionalConfigJSON: {}
         };
         site_configs ? stateVar["siteConfigs"] = site_configs.data : stateVar["siteConfigs"] =  this.state.siteConfigs;
@@ -64,11 +54,6 @@ export default class toCoverStoryCard extends React.Component {
         stateVar.languageTexts = this.getLanguageTexts(stateVar.siteConfigs.primary_language.toLowerCase());
         this.setState(stateVar);
       }));
-    }  else {
-      console.log("ISFromSSR", !this.props.isFromSSR);
-      if (!this.props.renderingSSR) {
-        this.componentDidUpdate();
-      }
     }
   }
 
@@ -77,25 +62,6 @@ export default class toCoverStoryCard extends React.Component {
       this.setState({
         dataJSON: nextProps.dataJSON
       });
-    }
-  }
-
-  componentDidUpdate() {
-    if(this.state.optionalConfigJSON.story_card_flip && this.state.dataJSON.card_data.data.summary){
-      let elem = document.querySelector('.protograph-summary-text');
-      this.multiLineTruncate(elem);
-    }
-  }
-
-  multiLineTruncate(el) {
-    let data = this.state.dataJSON.card_data.data,
-      wordArray = data.summary.split(' '),
-      props = this.props;
-    if (el) {
-      while(el.scrollHeight > el.offsetHeight) {
-        wordArray.pop();
-        el.innerHTML = wordArray.join(' ') + '...' + '<br><a id="read-more-button" href="#" class="protograph-read-more">Read more</a>' ;
-      }
     }
   }
 
@@ -111,106 +77,9 @@ export default class toCoverStoryCard extends React.Component {
     return true;
   }
 
-  // calculateDateTime() {
-  //   const data = this.state.dataJSON.card_data;
-  //   let date_split, date_split_by_hyphen, new_date, month, time;
-  //     date_split = data.data.date.split("T")[0],
-  //     date_split_by_hyphen = date_split.split("-"),
-  //     new_date = new Date(date_split),
-  //     month = new_date.toLocaleString("en-us", { month: "short" }),
-  //     time = data.data.date.split("T")[1];
-  //   let is_am_pm_split = time.split(":"), am_pm;
-  //   if (is_am_pm_split[0] < "12"){
-  //     am_pm = "am"
-  //   } else {
-  //     am_pm = "pm"
-  //   }
-
-  //   return {
-  //     month: month,
-  //     am_pm: am_pm,
-  //     date: date_split_by_hyphen,
-  //     time: time
-  //   }
-  // }
-
-  ellipsizeTextBox() {
-    let container = document.querySelector('.article-title'),
-    text = document.querySelector('.article-title'),
-      // text = document.querySelector(`.protograph-${this.props.mode}-mode .protograph-tocluster-title`),
-      wordArray;
-    let headline = this.state.dataJSON.card_data.data.headline;
-    if(headline === '' || headline === undefined){
-      text.innerHTML='';
-    }else{
-      // Setting the string to work with edit mode.
-      text.innerHTML = this.state.dataJSON.card_data.data.headline;
-      wordArray = this.state.dataJSON.card_data.data.headline.split(' ');
-      while (container.offsetHeight > 80) {
-        wordArray.pop();
-        text.innerHTML = wordArray.join(' ') + '...';
-      }
-    }
-  }
-
   handleClick(){
-    window.open(this.state.dataJSON.card_data.data.url,'_top');
+    window.open(this.state.dataJSON.data.url,'_top');
   }
-
-  // matchDomain(domain, url) {
-  //   let url_domain = this.getDomainFromURL(url).replace(/^(https?:\/\/)?(www\.)?/, ''),
-  //     domain_has_subdomain = this.subDomain(domain),
-  //     url_has_subdomain = this.subDomain(url_domain);
-
-  //   if (domain_has_subdomain) {
-  //     return (domain === url_domain) || (domain.indexOf(url_domain) >= 0);
-  //   }
-  //   if (url_has_subdomain) {
-  //     return (domain === url_domain) || (url_domain.indexOf(domain) >= 0);
-  //   }
-  //   return (domain === url_domain)
-  // }
-
-  // getDomainFromURL(url) {
-  //   let a = document.createElement('a');
-  //   a.href = url;
-  //   return a.hostname;
-  // }
-
-  // subDomain(url) {
-  //   if(!url){
-  //     url = "";
-  //   }
-  //   // IF THERE, REMOVE WHITE SPACE FROM BOTH ENDS
-  //   url = url.replace(new RegExp(/^\s+/), ""); // START
-  //   url = url.replace(new RegExp(/\s+$/), ""); // END
-
-  //   // IF FOUND, CONVERT BACK SLASHES TO FORWARD SLASHES
-  //   url = url.replace(new RegExp(/\\/g), "/");
-
-  //   // IF THERE, REMOVES 'http://', 'https://' or 'ftp://' FROM THE START
-  //   url = url.replace(new RegExp(/^http\:\/\/|^https\:\/\/|^ftp\:\/\//i), "");
-
-  //   // IF THERE, REMOVES 'www.' FROM THE START OF THE STRING
-  //   url = url.replace(new RegExp(/^www\./i), "");
-
-  //   // REMOVE COMPLETE STRING FROM FIRST FORWARD SLASH ON
-  //   url = url.replace(new RegExp(/\/(.*)/), "");
-
-  //   // REMOVES '.??.??' OR '.???.??' FROM END - e.g. '.CO.UK', '.COM.AU'
-  //   if (url.match(new RegExp(/\.[a-z]{2,3}\.[a-z]{2}$/i))) {
-  //     url = url.replace(new RegExp(/\.[a-z]{2,3}\.[a-z]{2}$/i), "");
-
-  //     // REMOVES '.??' or '.???' or '.????' FROM END - e.g. '.US', '.COM', '.INFO'
-  //   } else if (url.match(new RegExp(/\.[a-z]{2,4}$/i))) {
-  //     url = url.replace(new RegExp(/\.[a-z]{2,4}$/i), "");
-  //   }
-
-  //   // CHECK TO SEE IF THERE IS A DOT '.' LEFT IN THE STRING
-  //   var subDomain = (url.match(new RegExp(/\./g))) ? true : false;
-
-  //   return (subDomain);
-  // }
 
   renderHTML(data) {
     if (this.state.fetchingData) {
@@ -273,7 +142,7 @@ export default class toCoverStoryCard extends React.Component {
         <div>Loading</div>
       )
     }else{
-      let data = this.state.dataJSON.card_data.data;
+      let data = this.state.dataJSON.data;
       return(
         <div className="pro-section-page">
           {this.renderHTML(data)}
@@ -288,7 +157,7 @@ export default class toCoverStoryCard extends React.Component {
         <div>Loading</div>
       )
     }else{
-      let data = this.state.dataJSON.card_data.data;
+      let data = this.state.dataJSON.data;
       return(
         <div className="pro-article-page">
           {this.renderHTML(data)}
@@ -323,7 +192,7 @@ export default class toCoverStoryCard extends React.Component {
       case 'article':
         return this.renderArticle();
       default:
-        return this.renderHTML(this.state.dataJSON.card_data);
+        return this.renderHTML(this.state.dataJSON.data);
     }
   }
 }
