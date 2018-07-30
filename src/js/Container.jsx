@@ -89,7 +89,7 @@ export default class toCoverStoryCard extends React.Component {
     } else {
       return (
       <div className="pro-container" onClick={() => { this.handleClick() }}>
-        <div className="pro-col pro-col-16">
+        <div className="pro-col pro-col-16 cover-story-card">
           <div className="pro-row pro-row-5">
             <div className="pro-card pro-cover-card">
               <div className="frost-glass-background">
@@ -99,7 +99,7 @@ export default class toCoverStoryCard extends React.Component {
               <div className="toCoverStory-cover-image">
                 <img src={data.imageurl}></img>
               </div>
-              <div className="context">
+              <div className="context-cover-story">
                 <div className="intersection-tag">
                   {data.genre && <span>{data.genre}</span>}
                   {data.genre && data.subgenre && <span>&#x2027;</span>}

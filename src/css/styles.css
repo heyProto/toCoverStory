@@ -115,28 +115,28 @@ body {
   }
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card {
   overflow: hidden;
   position: relative;
   margin-bottom: 20px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .frost-glass-background {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .frost-glass-background {
   height: 100%;
   width: 100%;
   position: absolute;
   box-sizing: border-box;
-  z-index: -1;
+  z-index: 0;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .frost-glass-background img {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .frost-glass-background img {
   filter: blur(25px);
   transform: translate(0%, -50%);
   top: 50%;
   position: absolute;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .frost-glass-background .black-overlay {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .frost-glass-background .black-overlay {
   position: absolute;
   background: black;
   opacity: 0.4;
@@ -144,7 +144,7 @@ body {
   width: 100%;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story {
   width: 540px;
   position: absolute;
   bottom: 0px;
@@ -154,7 +154,7 @@ body {
   box-sizing: border-box;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .intersection-tag {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .intersection-tag {
   font-size: 10px;
   text-transform: uppercase;
   color: white;
@@ -163,11 +163,11 @@ body {
   margin-bottom: 8px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .intersection-tag span {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .intersection-tag span {
   margin-right: 5px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context h1 {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story h1 {
   font-size: 36px;
   font-family: "Avenir-Bold";
   color: white;
@@ -175,7 +175,7 @@ body {
   margin-bottom: 16px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context p {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story p {
   font-size: 14px;
   color: white;
   display: inline-block;
@@ -185,12 +185,12 @@ body {
   font-family: "AvenirLTStd-Book";
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline {
   color: white;
   font-size: 12px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline .byline-image {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline .byline-image {
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -199,93 +199,93 @@ body {
   margin-right: 10px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline .byline-image img {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline .byline-image img {
   width: 100%;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline .byline-name {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline .byline-name {
   display: inline-block;
   line-height: 40px;
   float: left;
   margin-right: 5px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .timeline {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .timeline {
   color: white;
   font-size: 12px;
   float: left;
   line-height: 40px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .timeline .dot-seperator {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .timeline .dot-seperator {
   margin-right: 5px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .media-icons {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .media-icons {
   line-height: 40px;
   margin-left: 20px;
   display: inline-block;
   color: white;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .media-icons .dot-seperator {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .media-icons .dot-seperator {
   margin-left: 5px;
   margin-right: 5px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .location-details {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .location-details {
   display: none;
   font-size: 12px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .location-details img {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .location-details img {
   height: 14px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .toCoverStory-cover-image {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .toCoverStory-cover-image {
   position: absolute;
   right: 0px;
   padding: 16px;
   padding-left: 0px;
 }
 
-.pro-container .pro-col-16 .pro-row-5 .toCoverStory-cover-image img {
+.pro-container .pro-col-16.cover-story-card .pro-row-5 .toCoverStory-cover-image img {
   height: 398px;
   border-radius: 2px;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card {
   height: auto;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .frost-glass-background {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .frost-glass-background {
   display: none;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story {
   width: 100%;
   position: relative;
   padding-left: 0px;
   padding-bottom: 0px;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .intersection-tag {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .intersection-tag {
   color: black;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context h1 {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story h1 {
   color: black;
   letter-spacing: -1;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context p {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story p {
   color: #777;
   font-size: 18px;
   letter-spacing: -0.5;
   margin-bottom: 24px;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info {
   border-top: 1px dashed #979797;
   border-bottom: 1px dashed #979797;
   padding-top: 8px;
@@ -293,41 +293,41 @@ body {
   margin-bottom: 24px;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline {
   color: black;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline .byline-image {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline .byline-image {
   height: 30px;
   width: 30px;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline .byline-name {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline .byline-name {
   line-height: 30px;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .timeline {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .timeline {
   color: black;
   line-height: 30px;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .media-icons {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .media-icons {
   color: black;
   line-height: 30px;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .location-details {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .location-details {
   display: block;
   float: right;
   line-height: 30px;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .location-details img {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .location-details img {
   margin-bottom: -3px;
   margin-right: 5px;
 }
 
-.pro-article-page .pro-container .pro-col-16 .pro-row-5 .toCoverStory-cover-image {
+.pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .toCoverStory-cover-image {
   display: none;
 }
 
@@ -407,139 +407,140 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card {
     height: auto;
   }
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .frost-glass-background {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .frost-glass-background {
     display: none;
   }
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story {
     width: 100%;
     position: relative;
     padding-left: 20px;
     padding-right: 20px;
+    height: auto;
   }
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .intersection-tag {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .intersection-tag {
     color: black;
     margin-bottom: 0px;
     margin-top: 8px;
   }
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context h1 {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story h1 {
     font-size: 22px;
     color: black;
   }
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context p {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story p {
     color: black;
   }
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline {
     color: #777;
     display: inline-block;
   }
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline .byline-image {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline .byline-image {
     display: none;
   }
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline .byline-name {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline .byline-name {
     display: inline-block;
     line-height: 22px;
     float: none;
     margin-right: 5px;
     display: inline-block;
   }
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .timeline {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .timeline {
     color: #777;
     float: none;
     display: inline-block;
     line-height: 22px;
   }
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .media-icons {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .media-icons {
     color: black;
     display: inline-block;
     opacity: 0.7;
     line-height: 22px;
   }
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .location-details {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .location-details {
     display: none;
     font-size: 12px;
   }
-  .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .location-details img {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .location-details img {
     height: 14px;
   }
-  .pro-container .pro-col-16 .pro-row-5 .toCoverStory-cover-image {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .toCoverStory-cover-image {
     padding: 0px;
     position: relative;
   }
-  .pro-container .pro-col-16 .pro-row-5 .toCoverStory-cover-image img {
+  .pro-container .pro-col-16.cover-story-card .pro-row-5 .toCoverStory-cover-image img {
     height: auto;
     width: 100%;
     border-radius: 0px;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card {
     height: auto;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .frost-glass-background {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .frost-glass-background {
     display: none;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story {
     width: 100%;
     position: relative;
     padding-left: 20px;
     padding-right: 20px;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .intersection-tag {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .intersection-tag {
     color: black;
     margin-bottom: 8px;
     margin-top: 8px;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context h1 {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story h1 {
     font-size: 22px;
     color: black;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context p {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story p {
     color: black;
     font-size: 16px;
     line-height: 26px;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info {
     margin-bottom: 0px;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline {
     color: #777;
     display: inline-block;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline .byline-image {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline .byline-image {
     display: none;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .byline .byline-name {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline .byline-name {
     display: inline-block;
     line-height: 22px;
     float: none;
     margin-right: 5px;
     display: inline-block;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .timeline {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .timeline {
     color: #777;
     float: none;
     display: inline-block;
     line-height: 22px;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .media-icons {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .media-icons {
     color: black;
     display: inline-block;
     opacity: 0.7;
     line-height: 22px;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .location-details {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .location-details {
     display: none;
     font-size: 12px;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .pro-cover-card .context .publishing-info .location-details img {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .location-details img {
     height: 14px;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .toCoverStory-cover-image {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .toCoverStory-cover-image {
     padding: 0px;
     position: relative;
   }
-  .pro-article-page .pro-container .pro-col-16 .pro-row-5 .toCoverStory-cover-image img {
+  .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .toCoverStory-cover-image img {
     height: auto;
     width: 100%;
     border-radius: 0px;

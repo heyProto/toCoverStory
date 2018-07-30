@@ -30,7 +30,7 @@ function renderWithMode(mode) {
 //     `
 // }
 
-function render(mode, initialState) {
+function render(initialState, mode) {
     let content = renderToString(
         <CoverStoryCard
             dataJSON={initialState.dataJSON}
