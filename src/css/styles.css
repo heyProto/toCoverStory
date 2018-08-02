@@ -330,82 +330,6 @@ body {
 .pro-article-page .pro-container .pro-col-16.cover-story-card .pro-row-5 .toCoverStory-cover-image {
   display: none;
 }
-
-.pro-article-page .pro-container .article-page-navigation {
-  padding-right: 30px;
-  box-sizing: border-box;
-}
-
-.pro-article-page .pro-container .article-page-navigation .page-list ul {
-  padding-left: 17px;
-  font-size: 12px;
-  color: #777;
-  line-height: 20px;
-}
-
-.pro-article-page .pro-container .article-page-navigation .page-list ul li {
-  margin-bottom: 16px;
-  cursor: pointer;
-  list-style: circle;
-}
-
-.pro-article-page .pro-container .article-page-navigation .page-list ul li a {
-  color: #777;
-  text-decoration: none;
-}
-
-.pro-article-page .pro-container .article-page-navigation .page-list ul li:hover a {
-  text-decoration: underline;
-}
-
-.pro-article-page .pro-container .article-page-content {
-  padding-left: 80px;
-  padding-right: 80px;
-  box-sizing: border-box;
-}
-
-.pro-article-page .pro-container .article-page-content .article-media {
-  width: 700px;
-  margin-left: -80px;
-}
-
-.pro-article-page .pro-container .article-page-content .article-media img {
-  border-radius: 4px;
-  width: 100%;
-  margin-bottom: 4px;
-  box-shadow: 0px 12px 14px #b0b0b07a;
-}
-
-.pro-article-page .pro-container .article-page-content .article-media .image-caption {
-  text-align: right;
-  font-size: 12px;
-  color: #777;
-  line-height: 22px;
-}
-
-.pro-article-page .pro-container .article-page-content h2 {
-  font-size: 22px;
-  font-family: "Avenir-Bold";
-  margin-bottom: 24px;
-}
-
-.pro-article-page .pro-container .article-page-content p {
-  font-size: 18px;
-  line-height: 33px;
-  color: #333;
-  margin-top: 0px;
-  margin-bottom: 1.5em;
-}
-
-.pro-article-page .pro-container .social-share-options {
-  text-align: right;
-}
-
-.pro-article-page .pro-container .social-share-options img {
-  margin-left: 10px;
-  cursor: pointer;
-}
-
 @media screen and (max-width: 600px) {
   .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card {
     height: auto;
@@ -547,41 +471,6 @@ body {
   }
   .pro-article-page .pro-container .pro-col-9 {
     width: 100vw;
-  }
-  .pro-article-page .pro-container .article-page-navigation {
-    display: none;
-  }
-  .pro-article-page .pro-container .article-page-content {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .pro-article-page .pro-container .article-page-content .article-media {
-    width: 100vw;
-    margin-left: -20px;
-  }
-  .pro-article-page .pro-container .article-page-content .article-media img {
-    border-radius: 0px;
-  }
-  .pro-article-page .pro-container .article-page-content .article-media .image-caption {
-    text-align: center;
-    font-size: 12px;
-    color: #777;
-    line-height: 22px;
-  }
-  .pro-article-page .pro-container .article-page-content h2 {
-    font-size: 18px;
-    margin-bottom: 16px;
-  }
-  .pro-article-page .pro-container .article-page-content p {
-    font-size: 16px;
-    line-height: 26px;
-  }
-  .pro-article-page .pro-container .social-share-options {
-    text-align: right;
-  }
-  .pro-article-page .pro-container .social-share-options img {
-    margin-left: 10px;
-    cursor: pointer;
   }
 }
 
