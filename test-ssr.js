@@ -4,7 +4,7 @@ var state = {
         "data":
         {
             "url": "https://thewire.in/210310/japan-cleaning-sanitation-work-swachh-bharat/",
-            "headline": "Zen and the Art of Sanitation, or the Right Way to Keep a Country Clean",
+            "headline": "Zen2 and the Art of Sanitation, or the Right Way to Keep a Country Clean",
             "byline": "Janaki Nair",
             "publishedat": "2018-01-03T06:30:00.000Z",
             "series": "Grit",
@@ -33,5 +33,5 @@ var state = {
         }
     }
 }
-let x = SSR.render("section", state);
+let x = SSR.render(state, "section");
 console.log(x);
