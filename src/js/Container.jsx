@@ -109,7 +109,7 @@ export default class toCoverStoryCard extends React.Component {
                 {data.summary && <p>{data.summary}</p>}
                 <div className="publishing-info">
                   {!data.hide_byline && <div className="byline">
-                    <div className="byline-image"><img src={data.byline_image}></img></div>
+                    {data.byline_image && <div className="byline-image"><img src={data.byline_image}></img></div>}
                     <div className="byline-name">{data.byline}</div>
                     {data.publishedat && <div className="timeline"><span className="dot-seperator">&#x2027;</span>{ta.ago(data.publishedat)}</div> }
                   </div>}

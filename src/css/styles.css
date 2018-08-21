@@ -188,6 +188,7 @@ body {
 .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline {
   color: white;
   font-size: 12px;
+  display: inline-flex;
 }
 
 .pro-container .pro-col-16.cover-story-card .pro-row-5 .pro-cover-card .context-cover-story .publishing-info .byline .byline-image {
