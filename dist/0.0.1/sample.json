@@ -1,25 +1,21 @@
 {
-    "data":
-    {
-        "url": "https://dnt71st2q6cqr.cloudfront.net/stories/note-a-sample-story-195.html",
-        "headline": "Note: A Sample Story",
-        "byline": "Amit Badheka",
-        "publishedat": "2018-03-19T08:01:00",
-        "hide_byline": false,
-        "series": "Test",
-        "genre": "Entertainment",
-        "subgenre": "Sports",
-        "iconbgcolor": "white",
-        "imageurl": "https://dnt71st2q6cqr.cloudfront.net/images/pyktest/ae0e4eae9fde7556/5881.jpeg",
-        "col7imageurl": "https://dnt71st2q6cqr.cloudfront.net/images/pyktest/ae0e4eae9fde7556/5881-16c.jpeg",
-        "focus": "h",
-        "country": "India",
-        "state": "",
+    "data": {
         "city": "",
-        "faviconurl": "https://dnt71st2q6cqr.cloudfront.net/images/pyktest/f932bec7afc53494/5869-thumb.png",
-        "importance": "low",
-        "summary": "Summary, the minimum length is 50 characters, but i was using 45 chars.",
-        "hasimage": false,
-        "hasvideo": false
+        "byline": "संवाददाता",
+        "publishername": "https://cdn.protograph.pykih.com",
+        "hide_byline": false,
+        "url": "https://p.jagran.com/stories/about-9.html",
+        "series": "जलजागरण",
+        "imageurl": "https://p.jagran.com/images/JagranNews/18141696e7d46911/4972.jpeg",
+        "focus": "h",
+        "publishedat": "2018-03-21T15:17:00",
+        "headline": "परिचय                                                                         ",
+        "state": "",
+        "iconbgcolor": "white",
+        "domainurl": "https://cdn.protograph.pykih.com",
+        "country": "India",
+        "faviconurl": "https://p.jagran.com/images/JagranNews/e4c4cb2201515439/thumb_2365.vnd.microsoft.icon",
+        "col7imageurl": "https://p.jagran.com/images/JagranNews/18141696e7d46911/4972-16c.jpeg",
+        "importance": "low"
     }
 }
