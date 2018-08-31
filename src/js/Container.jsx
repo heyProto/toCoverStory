@@ -87,51 +87,49 @@ export default class toCoverStoryCard extends React.Component {
         <div></div>
       )
     } else {
+      let publish_info_classname = 'publishing-info-blank';
+      if((!data.hide_byline || data.byline_image || data.byline || data.publishedat || data.hasvideo || data.hasimage || data.hasaudio || data.city || data.state || data.country)) {
+        publish_info_classname = 'publishing-info';
+      }
       return (
-      <div className="pro-container" onClick={() => { this.handleClick() }}>
-        <div className="pro-col pro-col-16 cover-story-card">
-          <div className="pro-row pro-row-5">
-            <div className="pro-card pro-cover-card">
-              <div className="frost-glass-background">
-                <img src={data.imageurl}></img>
-                <div className="black-overlay"></div>
-              </div>
-              <div className="toCoverStory-cover-image">
-                <img src={data.imageurl}></img>
-              </div>
-              <div className="context-cover-story">
-                <div className="intersection-tag">
-                  {data.genre && <span>{data.genre}</span>}
-                  {data.genre && data.subgenre && <span>&#x2027;</span>}
-                  {data.subgenre && <span>{data.subgenre}</span>}
-                </div>
-                {data.headline && <h1>{data.headline}</h1>}
-                {data.summary && <p>{data.summary}</p>}
-                <div className="publishing-info">
-                  {!data.hide_byline && <div className="byline">
-                    {data.byline_image && <div className="byline-image"><img src={data.byline_image}></img></div>}
-                    <div className="byline-name">{data.byline}</div>
-                    {data.publishedat && <div className="timeline"><span className="dot-seperator">&#x2027;</span>{ta.ago(data.publishedat)}</div> }
-                  </div>}
-                  {(data.hasvideo || data.hasimage || data.hasaudio) && <div className="media-icons">
-                    {data.hasimage && <span><img src="https://cdn.protograph.pykih.com/Assets/image.png" height="8px"></img>
-                        {(data.hasaudio || data.hasvideo) && <span className="dot-seperator">&#x2027;</span>}</span>}
-                    {data.hasaudio && <span><img src="https://cdn.protograph.pykih.com/Assets/audio.png" height="8px"></img>
-                        {data.hasvideo && <span className="dot-seperator">&#x2027;</span>}</span>}
-                    {data.hasvideo && <span><img src="https://cdn.protograph.pykih.com/Assets/video.png" height="8px"></img></span>}
-                  </div>}
-                  {(data.city || data.state || data.country) && <div className="location-details">
-                    <img src="https://cdn.protograph.pykih.com/lib/location-icon.png"></img>
-                      <span>{data.city ? data.city + (data.state || data.country ? ", " : "") : ""}
-                      {data.state ? data.state + ( data.country ? ", " : "" ):""}
-                      {data.country}</span>
-                  </div>}
-                </div>
-              </div>
+        <div className="pro-card pro-cover-card" onClick={() => { this.handleClick() }}>
+          <div className="frost-glass-background">
+            <img src={data.imageurl}></img>
+            <div className="black-overlay"></div>
+          </div>
+          <div className="toCoverStory-cover-image">
+            <img src={data.imageurl}></img>
+          </div>
+          <div className="context-cover-story">
+            <div className="intersection-tag">
+              {data.genre && <span>{data.genre}</span>}
+              {data.genre && data.subgenre && <span>&#x2027;</span>}
+              {data.subgenre && <span>{data.subgenre}</span>}
+            </div>
+            {data.headline && <h1>{data.headline}</h1>}
+            {data.summary && <p>{data.summary}</p>}
+            <div className={publish_info_classname}>
+              {!data.hide_byline && <div className="byline">
+                {data.byline_image && <div className="byline-image"><img src={data.byline_image}></img></div>}
+                <div className="byline-name">{data.byline}</div>
+                {data.publishedat && <div className="timeline"><span className="dot-seperator">&#x2027;</span>{ta.ago(data.publishedat)}</div> }
+              </div>}
+              {(data.hasvideo || data.hasimage || data.hasaudio) && <div className="media-icons">
+                {data.hasimage && <span><img src="https://cdn.protograph.pykih.com/Assets/image.png" height="8px"></img>
+                    {(data.hasaudio || data.hasvideo) && <span className="dot-seperator">&#x2027;</span>}</span>}
+                {data.hasaudio && <span><img src="https://cdn.protograph.pykih.com/Assets/audio.png" height="8px"></img>
+                    {data.hasvideo && <span className="dot-seperator">&#x2027;</span>}</span>}
+                {data.hasvideo && <span><img src="https://cdn.protograph.pykih.com/Assets/video.png" height="8px"></img></span>}
+              </div>}
+              {(data.city || data.state || data.country) && <div className="location-details">
+                <img src="https://cdn.protograph.pykih.com/lib/location-icon.png"></img>
+                  <span>{data.city ? data.city + (data.state || data.country ? ", " : "") : ""}
+                  {data.state ? data.state + ( data.country ? ", " : "" ):""}
+                  {data.country}</span>
+              </div>}
             </div>
           </div>
         </div>
-      </div>
       )
     }
   }
@@ -145,7 +143,13 @@ export default class toCoverStoryCard extends React.Component {
       let data = this.state.dataJSON.data;
       return(
         <div className="pro-section-page">
-          {this.renderHTML(data)}
+          <div className="pro-container" onClick={() => { this.handleClick() }}>
+            <div className="pro-col pro-col-16 cover-story-card">
+              <div className="pro-row pro-row-5">
+              {this.renderHTML(data)}
+              </div>
+            </div>
+          </div>
         </div>
       )
     }
@@ -160,7 +164,13 @@ export default class toCoverStoryCard extends React.Component {
       let data = this.state.dataJSON.data;
       return(
         <div className="pro-article-page">
-          {this.renderHTML(data)}
+          <div className="pro-container" onClick={() => { this.handleClick() }}>
+            <div className="pro-col pro-col-16 cover-story-card">
+              <div className="pro-row pro-row-5">
+              {this.renderHTML(data)}
+              </div>
+            </div>
+          </div>
         </div>
       )
     }
