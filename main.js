@@ -31,8 +31,10 @@ ProtoGraph.Card.toCoverStory.prototype.render = function () {
   if (this.options.isFromSSR){
     hydrate(
       <CoverStoryCard
+        selector={this.options.selector}
         mode={this.mode}
         dataURL={this.options.data_url}
+        siteConfigs={this.options.site_configs}
       />,
       this.options.selector);
   } else {
