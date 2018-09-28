@@ -284,7 +284,7 @@ export default class EditStoryCard extends React.Component {
                   this.state.mode == "blank" ? <div /> : <div className="protograph-app-holder">
                     <CoverStoryCard
                       mode={this.state.mode}
-                      dataJSON={this.state.dataJSON}
+                      dataJSON={this.state.dataJSON.card_data}
                       domain={this.props.domain}
                       optionalConfigJSON={this.state.optionalConfigJSON}
                       linkDetails={this.state.refLinkDetails}
