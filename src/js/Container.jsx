@@ -81,6 +81,31 @@ export default class toCoverStoryCard extends React.Component {
     window.open(this.state.dataJSON.data.url,'_top');
   }
 
+  renderPublishingInfo(data){
+    return (
+      <div>
+        {!data.hide_byline && <div className="byline">
+          {data.byline_image && <div className="byline-image"><img src={data.byline_image}></img></div>}
+          <div className="byline-name">{data.byline}</div>
+          {data.publishedat && <div className="timeline"><span className="dot-seperator">&#x2027;</span>{ta.ago(data.publishedat)}</div> }
+        </div>}
+        {(data.hasvideo || data.hasimage || data.hasaudio) && <div className="media-icons">
+          {data.hasimage && <span><img src="https://cdn.protograph.pykih.com/Assets/image.png" height="8px"></img>
+              {(data.hasaudio || data.hasvideo) && <span className="dot-seperator">&#x2027;</span>}</span>}
+          {data.hasaudio && <span><img src="https://cdn.protograph.pykih.com/Assets/audio.png" height="8px"></img>
+              {data.hasvideo && <span className="dot-seperator">&#x2027;</span>}</span>}
+          {data.hasvideo && <span><img src="https://cdn.protograph.pykih.com/Assets/video.png" height="8px"></img></span>}
+        </div>}
+        {(data.city || data.state || data.country) && <div className="location-details">
+          <img src="https://cdn.protograph.pykih.com/lib/location-icon.png"></img>
+            <span>{data.city ? data.city + (data.state || data.country ? ", " : "") : ""}
+            {data.state ? data.state + ( data.country ? ", " : "" ):""}
+            {data.country}</span>
+        </div>}
+      </div>
+    )
+  }
+
   renderHTML(data) {
     if (this.state.fetchingData) {
       return (
@@ -109,24 +134,7 @@ export default class toCoverStoryCard extends React.Component {
             {data.headline && <h1>{data.headline}</h1>}
             {data.summary && <p>{data.summary}</p>}
             <div className={publish_info_classname}>
-              {!data.hide_byline && <div className="byline">
-                {data.byline_image && <div className="byline-image"><img src={data.byline_image}></img></div>}
-                <div className="byline-name">{data.byline}</div>
-                {data.publishedat && <div className="timeline"><span className="dot-seperator">&#x2027;</span>{ta.ago(data.publishedat)}</div> }
-              </div>}
-              {(data.hasvideo || data.hasimage || data.hasaudio) && <div className="media-icons">
-                {data.hasimage && <span><img src="https://cdn.protograph.pykih.com/Assets/image.png" height="8px"></img>
-                    {(data.hasaudio || data.hasvideo) && <span className="dot-seperator">&#x2027;</span>}</span>}
-                {data.hasaudio && <span><img src="https://cdn.protograph.pykih.com/Assets/audio.png" height="8px"></img>
-                    {data.hasvideo && <span className="dot-seperator">&#x2027;</span>}</span>}
-                {data.hasvideo && <span><img src="https://cdn.protograph.pykih.com/Assets/video.png" height="8px"></img></span>}
-              </div>}
-              {(data.city || data.state || data.country) && <div className="location-details">
-                <img src="https://cdn.protograph.pykih.com/lib/location-icon.png"></img>
-                  <span>{data.city ? data.city + (data.state || data.country ? ", " : "") : ""}
-                  {data.state ? data.state + ( data.country ? ", " : "" ):""}
-                  {data.country}</span>
-              </div>}
+              {publish_info_classname === 'publishing-info' && this.renderPublishingInfo(data)}
             </div>
           </div>
         </div>
