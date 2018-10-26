@@ -1,21 +1,22 @@
 {
-    "data": {
-        "city": "",
-        "byline": "संवाददाता",
-        "publishername": "https://cdn.protograph.pykih.com",
-        "hide_byline": false,
-        "url": "https://p.jagran.com/stories/about-9.html",
-        "series": "जलजागरण",
-        "imageurl": "https://p.jagran.com/images/JagranNews/18141696e7d46911/4972.jpeg",
-        "focus": "h",
-        "publishedat": "2018-03-21T15:17:00",
-        "headline": "परिचय                                                                         ",
-        "state": "",
+    "data":
+    {
+        "url": "https://p.firstpost.com/stories/about.html",
+        "headline": "About #Spotlight",
+        "byline": "Shalini",
+        "publishedat": "2018-10-12T00:00:00",
+        "hide_byline": true,
+        "series": "Spotlight",
         "iconbgcolor": "white",
-        "domainurl": "https://cdn.protograph.pykih.com",
-        "country": "India",
-        "faviconurl": "https://p.jagran.com/images/JagranNews/e4c4cb2201515439/thumb_2365.vnd.microsoft.icon",
-        "col7imageurl": "https://p.jagran.com/images/JagranNews/18141696e7d46911/4972-16c.jpeg",
-        "importance": "low"
+        "imageurl": "https://p.firstpost.com/images/projects/7150ccf90d03f7e5/6523.jpeg",
+        "col7imageurl": "https://p.firstpost.com/images/projects/7150ccf90d03f7e5/6523-16c.jpeg",
+        "focus": "h",
+        "country": "",
+        "state": "",
+        "city": "",
+        "domainurl": "https://projects.pro.to",
+        "faviconurl": "https://p.firstpost.com/images/firstpost/c960b7fa80b97c43/6613-thumb.png",
+        "publishername": "https://projects.pro.to",
+        "importance": "high"
     }
 }
