@@ -88,7 +88,7 @@ export default class toCoverStoryCard extends React.Component {
       )
     } else {
       let publish_info_classname = 'publishing-info-blank';
-      if(!data.hide_byline && (data.byline_image || data.byline || data.publishedat || data.hasvideo || data.hasimage || data.hasaudio || data.city || data.state || data.country)) {
+      if((!data.hide_byline && data.byline)) {
         publish_info_classname = 'publishing-info';
       }
       return (
