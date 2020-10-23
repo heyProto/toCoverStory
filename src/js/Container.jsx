@@ -90,14 +90,14 @@ export default class toCoverStoryCard extends React.Component {
           {data.publishedat && <div className="timeline"><span className="dot-seperator">&#x2027;</span>{ta.ago(data.publishedat)}</div> }
         </div>}
         {(data.hasvideo || data.hasimage || data.hasaudio) && <div className="media-icons">
-          {data.hasimage && <span><img src="https://cdn.protograph.pykih.com/Assets/image.png" height="8px"></img>
+          {data.hasimage && <span><img src="https://utils.pro.to/Assets/image.png" height="8px"></img>
               {(data.hasaudio || data.hasvideo) && <span className="dot-seperator">&#x2027;</span>}</span>}
-          {data.hasaudio && <span><img src="https://cdn.protograph.pykih.com/Assets/audio.png" height="8px"></img>
+          {data.hasaudio && <span><img src="https://utils.pro.to/Assets/audio.png" height="8px"></img>
               {data.hasvideo && <span className="dot-seperator">&#x2027;</span>}</span>}
-          {data.hasvideo && <span><img src="https://cdn.protograph.pykih.com/Assets/video.png" height="8px"></img></span>}
+          {data.hasvideo && <span><img src="https://utils.pro.to/Assets/video.png" height="8px"></img></span>}
         </div>}
         {(data.city || data.state || data.country) && <div className="location-details">
-          <img src="https://cdn.protograph.pykih.com/lib/location-icon.png"></img>
+          <img src="https://utils.pro.to/lib/location-icon.png"></img>
             <span>{data.city ? data.city + (data.state || data.country ? ", " : "") : ""}
             {data.state ? data.state + ( data.country ? ", " : "" ):""}
             {data.country}</span>
